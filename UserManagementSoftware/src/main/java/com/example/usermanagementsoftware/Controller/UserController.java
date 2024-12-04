@@ -74,7 +74,35 @@ public class UserController {
         return ResponseEntity.status(200).body(sameAgeOrAboveUsers);
     }
 
+    @GetMapping("/check/username/{username}/and/password/{password}")
+    public ResponseEntity checkUsernameAndPassword(@PathVariable String username, @PathVariable String password){
+       userService.checkUsernameAndPassword(username, password);
+        return ResponseEntity.status(200).body(new ApiResponse("correct username and password"));
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,8 +12,7 @@ import org.hibernate.annotations.Check;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Entity
-@Check(constraints = "length(name) > 4 and length(username" +
-        ") > 4 and (role = 'admin' or role = 'user') and age > 0")
+//@Check(constraints = "length(name) > 4 and length(username) > 4 and (role = 'admin' or role = 'user') and age > 0")
 //@Table(name = "users")
 public class User {
     @Id

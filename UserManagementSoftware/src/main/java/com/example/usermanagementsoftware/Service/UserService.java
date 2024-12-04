@@ -58,6 +58,12 @@ public class UserService {
         }
     }
 
+    public void checkUsernameAndPassword(String username, String password){
+        User user = userRepository.checkUsernameAndPassword(username, password);
+        if(user==null)
+            throw new ApiException("password not found");
+    }
+
     public User getUserByEmail(String email){
        User user = userRepository.findUserByEmail(email);
        if(user==null){

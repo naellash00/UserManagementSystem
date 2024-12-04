@@ -13,9 +13,14 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
      @Query("select u from User u where u.username = ?1")
      User checkUserName(String username);
+     //the other way
+     User findUserByUsername(String username);
 
      @Query("select u from User u where u.password = ?1")
      User checkPassword(String password);
+
+     @Query("select u from User u where u.username = ?1 and u.password = ?2")
+     User checkUsernameAndPassword(String username, String password);
 
      User findUserByEmail(String email);
 
@@ -25,3 +30,13 @@ public interface UserRepository extends JpaRepository<User, Integer> {
      @Query("select u from User u where u.age >= ?1")
      List<User> findSameAgeOrAboveUsers(Integer age);
 }
+
+
+
+
+
+
+
+
+
+
